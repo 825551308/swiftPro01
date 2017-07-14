@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A53C6E461F17573E0052ACB8 /* PPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C6E451F17573E0052ACB8 /* PPViewController.swift */; };
+		A52A85AC1F184C65009AC17D /* RegistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A85AB1F184C65009AC17D /* RegistVC.swift */; };
+		A52A85B01F18A7D8009AC17D /* VCExchangeMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A85AF1F18A7D8009AC17D /* VCExchangeMethod.swift */; };
+		A52A85B21F18A908009AC17D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52A85B11F18A908009AC17D /* BaseViewController.swift */; };
 		A53C6E481F17693F0052ACB8 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C6E471F17693F0052ACB8 /* LoginManager.swift */; };
 		A5A7B31C1F17518A0080142B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B31B1F17518A0080142B /* LoginVC.swift */; };
 		A5A7B31E1F1751970080142B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7B31D1F1751970080142B /* MainVC.swift */; };
@@ -39,8 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A53C6E451F17573E0052ACB8 /* PPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPViewController.swift; sourceTree = "<group>"; };
-		A53C6E471F17693F0052ACB8 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		A52A85AB1F184C65009AC17D /* RegistVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistVC.swift; sourceTree = "<group>"; };
+		A52A85AF1F18A7D8009AC17D /* VCExchangeMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VCExchangeMethod.swift; path = ../VCExchangeMethod.swift; sourceTree = "<group>"; };
+		A52A85B11F18A908009AC17D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A53C6E471F17693F0052ACB8 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginManager.swift; path = ../LoginManager.swift; sourceTree = "<group>"; };
 		A5A7B31B1F17518A0080142B /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		A5A7B31D1F1751970080142B /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		A5B624971F16FA2000E7501E /* swiftPro01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftPro01.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A52A85B31F18B7F4009AC17D /* vender */ = {
+			isa = PBXGroup;
+			children = (
+				A53C6E471F17693F0052ACB8 /* LoginManager.swift */,
+				A52A85AF1F18A7D8009AC17D /* VCExchangeMethod.swift */,
+			);
+			path = vender;
+			sourceTree = "<group>";
+		};
 		A5B6248E1F16FA2000E7501E = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +120,7 @@
 		A5B624991F16FA2000E7501E /* swiftPro01 */ = {
 			isa = PBXGroup;
 			children = (
+				A52A85B31F18B7F4009AC17D /* vender */,
 				A5B6249A1F16FA2000E7501E /* AppDelegate.swift */,
 				A5B6249C1F16FA2000E7501E /* ViewController.swift */,
 				A5B6249E1F16FA2000E7501E /* Main.storyboard */,
@@ -114,10 +128,10 @@
 				A5B624A61F16FA2000E7501E /* LaunchScreen.storyboard */,
 				A5B624A91F16FA2000E7501E /* Info.plist */,
 				A5B624A11F16FA2000E7501E /* swiftPro01.xcdatamodeld */,
+				A52A85AB1F184C65009AC17D /* RegistVC.swift */,
 				A5A7B31B1F17518A0080142B /* LoginVC.swift */,
 				A5A7B31D1F1751970080142B /* MainVC.swift */,
-				A53C6E451F17573E0052ACB8 /* PPViewController.swift */,
-				A53C6E471F17693F0052ACB8 /* LoginManager.swift */,
+				A52A85B11F18A908009AC17D /* BaseViewController.swift */,
 			);
 			path = swiftPro01;
 			sourceTree = "<group>";
@@ -277,10 +291,12 @@
 			files = (
 				A5B6249D1F16FA2000E7501E /* ViewController.swift in Sources */,
 				A5A7B31E1F1751970080142B /* MainVC.swift in Sources */,
+				A52A85AC1F184C65009AC17D /* RegistVC.swift in Sources */,
 				A53C6E481F17693F0052ACB8 /* LoginManager.swift in Sources */,
 				A5B6249B1F16FA2000E7501E /* AppDelegate.swift in Sources */,
+				A52A85B21F18A908009AC17D /* BaseViewController.swift in Sources */,
 				A5B624A31F16FA2000E7501E /* swiftPro01.xcdatamodeld in Sources */,
-				A53C6E461F17573E0052ACB8 /* PPViewController.swift in Sources */,
+				A52A85B01F18A7D8009AC17D /* VCExchangeMethod.swift in Sources */,
 				A5A7B31C1F17518A0080142B /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

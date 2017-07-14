@@ -8,15 +8,14 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: BaseViewController {
 
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var pwdTextField:UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("LoginVC")
         // Do any additional setup after loading the view.
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.plain, target: self, action:#selector(self.registerButtonAction(_serder:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.plain, target: self, action:#selector(self.registerButtonAction(_:)))
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,24 +24,22 @@ class LoginVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     @IBAction func LoginButtonAction(_ sender: Any) {
-        if userNameTextField.text == "张三" && pwdTextField.text == "123" {
+        let uNameString = userNameTextField.text! as NSString
+        let pwdString = pwdTextField.text! as NSString
+        /** 登录验证 */
+        if !self.validateLogin(userName: uNameString, pwd: pwdString) {
+            return
+        }
+        /** 从plist文件里检查登录 */
+        let checkLogin:Bool = PlistManager().checkLogin(userName: uNameString, pwd: pwdString)
+        if checkLogin {
             /** 写法1 */
 //            let me = userNameTextField.text!
 //            let message = "恭喜您\(me),登录成功！"
             /** 写法2 */
             let message = "恭喜您\(userNameTextField.text ?? ""),登录成功！"
-            
+            self.view.endEditing(true)
             print(message)
             let alert = UIAlertView(title: "提示", message: message, delegate: self, cancelButtonTitle: "知道啦！")
             alert.show()
@@ -59,11 +56,28 @@ class LoginVC: UIViewController {
         
     }
     
-//    func registerButtonAction(_serder:Any){
-//        print("跳转注册界面!")
-//    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+    /** 登录验证 */
+    func validateLogin(userName:NSString,pwd:NSString) ->Bool{
+        if userName.length == 0 {
+            UIAlertView(title: "提示", message: "请输入用户名！", delegate: self, cancelButtonTitle: "知道啦！").show()
+            return false
+        }
+        if pwd.length == 0 {
+            UIAlertView(title: "提示", message: "请输入密码！", delegate: self, cancelButtonTitle: "知道啦！").show()
+            return false
+        }
+        return true
     }
+    
+    func registerButtonAction(_ sender:Any) -> Void {
+        let vc:RegistVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "registerVC") as! RegistVC
+        weak var weakSelf = self
+        vc.registerBlock = {(str) in
+            if str.length > 0 {
+                weakSelf?.userNameTextField.text = str as String
+            }
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
 }

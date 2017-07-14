@@ -173,7 +173,7 @@
                                 <rect key="frame" x="30" y="134" width="315" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -207,7 +207,7 @@
         <!--注册界面-->
         <scene sceneID="ScC-2m-vzO">
             <objects>
-                <viewController id="ULh-Wh-Tvq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="registerVC" id="ULh-Wh-Tvq" customClass="RegistVC" customModule="swiftPro01" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mpF-aQ-GdI"/>
                         <viewControllerLayoutGuide type="bottom" id="djD-WS-0CJ"/>
@@ -215,11 +215,68 @@
                     <view key="view" contentMode="scaleToFill" id="v0t-4F-kVl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入您的新用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c6H-WF-uha">
+                                <rect key="frame" x="14" y="84" width="347" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入您的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OqK-SC-p7U">
+                                <rect key="frame" x="14" y="134" width="347" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAr-7t-zC3">
+                                <rect key="frame" x="137.5" y="617" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.027450980390000001" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="k1A-s9-H0t"/>
+                                    <constraint firstAttribute="width" constant="100" id="rEm-l3-hrc"/>
+                                </constraints>
+                                <state key="normal" title="注    册">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.conerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerButtonClick:" destination="ULh-Wh-Tvq" eventType="touchUpInside" id="FZ4-bT-uuz"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入您的确认密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4tT-nU-oxH">
+                                <rect key="frame" x="14" y="184" width="347" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4tT-nU-oxH" firstAttribute="top" secondItem="OqK-SC-p7U" secondAttribute="bottom" constant="20" id="DEd-0q-NNK"/>
+                            <constraint firstItem="UAr-7t-zC3" firstAttribute="centerX" secondItem="v0t-4F-kVl" secondAttribute="centerX" id="F58-lC-tLF"/>
+                            <constraint firstItem="OqK-SC-p7U" firstAttribute="leading" secondItem="v0t-4F-kVl" secondAttribute="leading" constant="14" id="J7l-4p-xam"/>
+                            <constraint firstItem="c6H-WF-uha" firstAttribute="leading" secondItem="v0t-4F-kVl" secondAttribute="leading" constant="14" id="QEs-MC-Kbv"/>
+                            <constraint firstAttribute="trailing" secondItem="OqK-SC-p7U" secondAttribute="trailing" constant="14" id="Vce-lH-mDN"/>
+                            <constraint firstItem="OqK-SC-p7U" firstAttribute="top" secondItem="c6H-WF-uha" secondAttribute="bottom" constant="20" id="Xm3-CD-YZ8"/>
+                            <constraint firstAttribute="trailing" secondItem="c6H-WF-uha" secondAttribute="trailing" constant="14" id="ZCu-e6-hv5"/>
+                            <constraint firstItem="c6H-WF-uha" firstAttribute="top" secondItem="mpF-aQ-GdI" secondAttribute="bottom" constant="20" id="q4b-Ch-BGp"/>
+                            <constraint firstAttribute="trailing" secondItem="4tT-nU-oxH" secondAttribute="trailing" constant="14" id="rnJ-Yz-ke3"/>
+                            <constraint firstItem="4tT-nU-oxH" firstAttribute="leading" secondItem="v0t-4F-kVl" secondAttribute="leading" constant="14" id="sSc-4f-OvU"/>
+                            <constraint firstItem="djD-WS-0CJ" firstAttribute="top" secondItem="UAr-7t-zC3" secondAttribute="bottom" constant="20" id="uN0-22-npO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="注册界面" id="B40-jo-fdT">
                         <barButtonItem key="backBarButtonItem" title="返回" id="MBi-rr-ynr"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="registerName" destination="c6H-WF-uha" id="dfT-ES-hiI"/>
+                        <outlet property="registerPwd" destination="OqK-SC-p7U" id="gmL-Rj-08r"/>
+                        <outlet property="registerPwdAgain" destination="4tT-nU-oxH" id="rDE-zE-7aG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WkG-cO-2Fa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
